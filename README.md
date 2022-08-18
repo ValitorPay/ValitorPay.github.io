@@ -1,12 +1,14 @@
-## Welcome to ValitorPay Documentation
+# Welcome to ValitorPay Documentation
 
-![logo](docs/assets/Logo.png)
+![logo](/docs/assets/Logo.png)
 
 
 
-### Markdown
+## Overview
+Google Pay™ Integration is consisted of two flows:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Untokenized 
+### (Web Applications, pan_only, Regular payment):
 
 ```markdown
 Syntax highlighted code block
