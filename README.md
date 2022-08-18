@@ -10,6 +10,7 @@ Google Pay™ Integration is consisted of two flows:
 ## Untokenized 
 ### (Web Applications, pan_only, Regular payment):
 
+![Showing untokenized flow](/docs/assets/mynd1.jpg)
 ```markdown
 Syntax highlighted code block
 
