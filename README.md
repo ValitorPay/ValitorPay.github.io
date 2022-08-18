@@ -1,6 +1,6 @@
 ## Welcome to ValitorPay Documentation
 
-![logo](/docs/assets/Logo.png)
+![logo](ValitorPay.github.io/docs/assets/Logo.png)
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
