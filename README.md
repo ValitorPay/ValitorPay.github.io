@@ -31,7 +31,7 @@ Pay attention for button layouts.
 
 URL: https://uat.valitorpay.com/ValitorPay/Payment/CardPayment
 
-Request example:
+**Request example:**
 ```
 {"operation": "Sale",
 "amount":1000,
