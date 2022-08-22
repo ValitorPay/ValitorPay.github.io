@@ -6,14 +6,14 @@ Google Pay™ Integration is consisted of two flows:
 ### Untokenized 
 (Web Applications, pan_only, Regular payment):
 
-![Showing untokenized flow](docs/assets/mynd1.JPG)
+![Showing untokenized flow](docs/assets/Untokenized.JPG)
 
 Contains additional steps for verifications. Additional calls should be performed (3DS and payment) in comparison with Tokenized flow
 
 ### Tokenized
 (Android™, 3DS_Cryptagram, Wallet transaction):
 
-![Showing untokenized flow](docs/assets/mynd2.PNG)
+![Showing untokenized flow](docs/assets/Tokenized.PNG)
 
 ## Web application integration
 ### Google Pay Api
