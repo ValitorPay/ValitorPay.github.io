@@ -4,32 +4,32 @@
 Google Pay™ Integration is consisted of two flows:
 
 ### Untokenized 
-(Web Applications, pan_only, Regular payment):
+(Web Applications, Regular payment):
 
 ![Showing untokenized flow](docs/assets/Untokenized.JPG)
 
 Contains additional steps for verifications. Additional calls should be performed (3DS and payment) in comparison with Tokenized flow
 
 ### Tokenized
-(Android™, 3DS_Cryptagram, Wallet transaction):
+(Android™, Wallet transaction):
 
-![Showing untokenized flow](docs/assets/Tokenized.PNG)
+![Showing untokenized flow](docs/assets/Tokenized.JPG)
 
 ## Web application integration
 ### Google Pay Api
 
 To integrate Google Pay™ acceptance into your application, perform the steps provided in the [Google Pay Web Api documentation](https://developers.google.com/pay/api/android/guides/test-and-deploy/integration-checklist). Please, take look into demos [Google Pay Web API documentation Demos](https://developers.google.com/pay/api/web/guides/resources/demos).
 
-In general tntegration is started by loading Java Script library and defining parameters:
+In general integration is started by loading Java Script library and defining parameters:
 - gateway: Valitor
 - environment: Test or Production
 - allowedCardAuthMethods: For Web can be PAN_ONLY even in documentation is defined also CRYPTOGRAM_3DS
 
 Pay attention for button layouts.
 
-### Decrypt token (valitor payment wallet transaction API):
+### Decrypt token (Valitor Payment Wallet transaction API):
 
-URL: https://uat.valitorpay.com/ValitorPay/Payment/CardPayment
+URL: https://uat.valitorpay.com/Payment/CardPayment
 
 **Request example:**
 ```
@@ -65,6 +65,8 @@ piv9k0wcblSPuxj2FR4/la5Sq+NRzejs2eNGKwzsg8c\\u003d\",\"tag\":\"neMQnLn8eHaHoiKP8
 }
 ```
 ### 3DS secure verficiation API:
+URL: https://uat.valitorpay.com/CardVerification
+
 **Request example:**
 ```
 {    
@@ -144,7 +146,9 @@ piv9k0wcblSPuxj2FR4/la5Sq+NRzejs2eNGKwzsg8c\\u003d\",\"tag\":\"neMQnLn8eHaHoiKP8
 
 ```
 ### Payment API:
-**Request:**
+URL: https://uat.valitorpay.com/Payment/CardPayment
+
+**Request example:**
 
 ```
 {  
@@ -168,31 +172,28 @@ piv9k0wcblSPuxj2FR4/la5Sq+NRzejs2eNGKwzsg8c\\u003d\",\"tag\":\"neMQnLn8eHaHoiKP8
  }
 
 ```
-**Response:**
+**Response example:**
 
 ```
-{  
-  "operation": "Sale",
-  "transactionType": "ECommerce",
-  "cardNumber": "341111000000151",
-  "expirationMonth": 12,
-  "expirationYear": 2030,
-  "cvc": "1234",
-  "additionalData": {
-    "merchantReferenceData": "ValitorPay TEST"
-   },  
-   "currency": "ISK",
-   "amount": 150,
-   "cardVerificationData": {
-    "cavv": "jq6EHIP0PfZEYwAAnuCpB4MAAAA=",
-    "mdStatus": "MdAttempt",
-    "xid": "nrQGVcVW0CIzw6wsqwIlxLAUTCE=",
-    "dsTransId": "f4bd9217-f3ee-4895-a207-cdf489aa5g8c"
-    },  
-    "isFinalCapture": false,
-    "systemCalling": "MerchantSystemName V1.0"
-}
-
+{
+  "acquirerReferenceNumber": "898109",
+  "transactionID": "223113898109",
+  "authorizationCode": "803761",
+  "transactionLifecycleId": "000000289501967",
+  "maskedCardNumber": "341111*****0151",
+  "isSuccess": true,
+  "cardInformation": {
+      "cardScheme": "A",
+      "issuingCountry": "US",
+      "cardUsage": "Credit",
+      "cardCategory": "Consumer",
+      "outOfScaScope": true
+   },
+   "responseCode": "00-I",
+   "responseDescription": "Authorized.",
+   "responseTime": "00:00:00",
+   "correlationID": "45a5bb98-1f3e-4d38-93c9-def4d20f5c8a"
+}   
 ```
 ## Android™ application integration
 ### GooglePay Api
@@ -205,7 +206,7 @@ Parameters:
 
 
 ### Payment (valitor payment wallet transaction API):
-URL: https://uat.valitorpay.com/ValitorPay/Payment/CardPayment
+URL: https://uat.valitorpay.com/Payment/CardPayment
 
 **Request example:**
 ```
