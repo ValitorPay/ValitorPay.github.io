@@ -18,7 +18,7 @@ Contains additional steps for verifications. Additional calls should be performe
 ## Web application integration
 ### Google Pay Api
 
-To integrate Google Pay™ acceptance into your application, perform the steps provided in the [Google Pay Web Api documentation](https://developers.google.com/pay/api/android/guides/test-and-deploy/integration-checklist). Please, take look into demos [Google Pay Web API documentation Demos](https://developers.google.com/pay/api/web/guides/resources/demos).
+To integrate Google Pay™ acceptance into your application, perform the steps provided in the [Google Pay Web integration checklist](https://developers.google.com/pay/api/web/guides/test-and-deploy/integration-checklist). You can find developer documentation in [Google Pay Web developer documentation](https://developers.google.com/pay/api/web/overview). Please, take look into demos [Google Pay Web API documentation Demos](https://developers.google.com/pay/api/web/guides/resources/demos) and the [Google Pay Web Brand Guidelines](https://developers.google.com/pay/api/web/guides/brand-guidelines).
 
 In general integration is started by loading Java Script library and defining parameters:
 - gateway: Valitor
@@ -198,7 +198,7 @@ URL: https://uat.valitorpay.com/Payment/CardPayment
 ## Android™ application integration
 ### GooglePay Api
 
-To integrate Google Pay acceptance into your application, perform the steps provided in the [Google Pay Android API documentation](https://developers.google.com/pay/api/web/guides/tutorial),   Sample   app   could   be   found   in [Google Pay Android API documentation - sample app](https://developers.google.com/pay/api/processors/guides/test-and-validation/create-test-app).
+To integrate Google Pay acceptance into your application, perform the steps provided in the [Google Pay Android integration checklist](https://developers.google.com/pay/api/android/guides/test-and-deploy/integration-checklist) also see the [Google Pay Android developer documentation](https://developers.google.com/pay/api/android/overview). You must also follow the [Google Pay Android brand guidelines](https://developers.google.com/pay/api/android/guides/brand-guidelines). The sample   app   can   be   found   in [Google Pay Android API documentation - sample app](https://developers.google.com/pay/api/processors/guides/test-and-validation/create-test-app).
 
 Parameters:
 - ProcessorName=Valitor
