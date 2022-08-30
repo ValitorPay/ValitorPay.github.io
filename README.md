@@ -18,16 +18,14 @@ Contains additional steps for verifications. Additional calls should be performe
 ## Web application integration
 ### Google Pay Api
 
-To integrate Google Pay™ acceptance into your application, perform the steps provided in the [Google Pay Web integration checklist](https://developers.google.com/pay/api/web/guides/test-and-deploy/integration-checklist). You can find developer documentation in [Google Pay Web developer documentation](https://developers.google.com/pay/api/web/overview). Please, take look into demos [Google Pay Web API documentation Demos](https://developers.google.com/pay/api/web/guides/resources/demos) and the [Google Pay Web Brand Guidelines](https://developers.google.com/pay/api/web/guides/brand-guidelines).
+To integrate Google Pay™ acceptance into your application, perform the steps provided in the [Google Pay Web integration checklist](https://developers.google.com/pay/api/web/guides/test-and-deploy/integration-checklist). The developer can find documentation in [Google Pay Web developer documentation](https://developers.google.com/pay/api/web/overview). Please, take look into demos [Google Pay Web API documentation Demos](https://developers.google.com/pay/api/web/guides/resources/demos) and the [Google Pay Web Brand Guidelines](https://developers.google.com/pay/api/web/guides/brand-guidelines).
 
 In general integration is started by loading Java Script library and defining parameters:
 - gateway: Valitor
 - environment: Test or Production
 - allowedCardAuthMethods: For Web can be PAN_ONLY even in documentation is defined also CRYPTOGRAM_3DS
 
-Pay attention for button layouts.
-
-### Decrypt token (Valitor Payment Wallet transaction API):
+### Token Decryption API:
 
 URL: https://uat.valitorpay.com/Payment/CardPayment
 
@@ -64,7 +62,7 @@ piv9k0wcblSPuxj2FR4/la5Sq+NRzejs2eNGKwzsg8c\\u003d\",\"tag\":\"neMQnLn8eHaHoiKP8
   "correlationID": "78c7e355-8e12-499b-9a6e-ce41e96fa7a9"
 }
 ```
-### 3DS secure verficiation API:
+### 3D Secure verficiation API:
 URL: https://uat.valitorpay.com/CardVerification
 
 **Request example:**
@@ -205,7 +203,7 @@ Parameters:
 - GatewayMerchantId=MerchantAgreementNumber
 
 
-### Payment (valitor payment wallet transaction API):
+### Payment API:
 URL: https://uat.valitorpay.com/Payment/CardPayment
 
 **Request example:**
