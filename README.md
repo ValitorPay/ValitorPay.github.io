@@ -247,7 +247,7 @@ URL: https://uat.valitorpay.com/Payment/CardPayment
 | VISA  | AUD, CAD, CHF, DKK, EUR, GBP, HKD, ISK, JPY, NOK, PLN, SEK, USD  | ALL  |
 | Master Card  | AUD, CAD, CHF, DKK, EUR, GBP, HKD, ISK, JPY, NOK, PLN, SEK, USD  | ALL  |
 | American Express  | ISK, EUR, USD  | ALL |
-| American Express  | BBR  | Great Britain |
+| American Express  | GBR  | Great Britain |
 ## Trademark Information
 Android™ and Google Pay™ are trademarks of Google LLC.
 
