@@ -85,9 +85,8 @@ URL: https://uat.valitorpay.com/Payment/CardPayment
 "transactionType": "WalletTransaction",
 "Wallet": {
       "WalletType": "GooglePay",
-      "GooglePay":{"signature":"MEUCIAZtot222t/FRosR8oO2H3c1xe/ypOIAQVeCeRfUZnTsAiEAqwsWtfo+IZXGhg2fTEUfxeA4IY
-EHyUM6hZ6NuJNEExE\u003d","intermediateSigningKey":{"signedKey":"{\"keyValue\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgA
-EsgSQwhfkzjKyV8QLMEv1TRAwlHxsK47DIyk1RwkNRJQ3yNEpwrqtlJQ1ycPXFtCZm0p6pL5n3L20qRCfoF28FA\\u003d\\u003d\",\"key
+      "GooglePay":{"signature":"MEUCIAZtot222t/FRosR8oO2H3c1xe/ypOIAQVeCeRfUZnTsAiEAqwsWtfo+IZXGhg2fTEUfxeA4IYEHyUM6hZ6NuJNEExE\u003d","intermediateSigningKey":{"signedKey":"
+      {\"keyValue\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEsgSQwhfkzjKyV8QLMEv1TRAwlHxsK47DIyk1RwkNRJQ3yNEpwrqtlJQ1ycPXFtCZm0p6pL5n3L20qRCfoF28FA\\u003d\\u003d\",\"key
 Expiration\":\"1658465055538\"}","signatures":["MEYCIQDpWGrNCagKyZcK+yPtcX5iaL2IP2f6BvxhLGIiCOZToQIhANvHUV8Ar3KoiTfh2
 +MIIGXzOoIYy58hHhsnF7MWnRt/"]},"protocolVersion":"ECv2","signedMessage":"{\"encryptedMessage\":\"LzYzlhR6zFZn/3H8ZdX0G
 zJ4MsJtKy9HnC9aahmBGGbBLesE4DMxKnLJlPn/FqDeylECDkqI6DOIGu3RFltXcUgFWJRRgPTFuxsZ5rBncu/XZIN4SkHLm2nN1ovxEI/j+c0
