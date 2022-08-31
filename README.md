@@ -18,9 +18,9 @@ Contains additional steps for verifications. Additional calls should be performe
 ## Web application integration
 ### Google Pay Api
 
-To integrate Google Pay™ acceptance into your application, perform the steps provided in the [Google Pay Web integration checklist](https://developers.google.com/pay/api/web/guides/test-and-deploy/integration-checklist). The developer can find documentation in [Google Pay Web developer documentation](https://developers.google.com/pay/api/web/overview). Please, take look into demos [Google Pay Web API documentation Demos](https://developers.google.com/pay/api/web/guides/resources/demos) and the [Google Pay Web Brand Guidelines](https://developers.google.com/pay/api/web/guides/brand-guidelines).
+To integrate Google Pay™ acceptance into your application, follow instructions ([Google Pay Web developer documentation](https://developers.google.com/pay/api/web/overview),[Google Pay Web integration checklist](https://developers.google.com/pay/api/web/guides/test-and-deploy/integration-checklist) and [Google Pay Web Brand Guidelines](https://developers.google.com/pay/api/web/guides/brand-guidelines)).
 
-In general integration is started by loading Java Script library and defining parameters:
+Integration is started by loading Java Script library ([Google Pay Web API documentation Demos](https://developers.google.com/pay/api/web/guides/resources/demos)) and defining parameters:
 - gateway: Valitor
 - environment: Test or Production
 - allowedCardAuthMethods: For Web can be PAN_ONLY even in documentation is defined also CRYPTOGRAM_3DS
@@ -196,7 +196,7 @@ URL: https://uat.valitorpay.com/Payment/CardPayment
 ## Android™ application integration
 ### GooglePay Api
 
-To integrate Google Pay acceptance into your application, perform the steps provided in the [Google Pay Android integration checklist](https://developers.google.com/pay/api/android/guides/test-and-deploy/integration-checklist) also see the [Google Pay Android developer documentation](https://developers.google.com/pay/api/android/overview). You must also follow the [Google Pay Android brand guidelines](https://developers.google.com/pay/api/android/guides/brand-guidelines). The sample   app   can   be   found   in [Google Pay Android API documentation - sample app](https://developers.google.com/pay/api/processors/guides/test-and-validation/create-test-app).
+To integrate Google Pay™ acceptance into your application, follow instructions ([Google Pay Android developer documentation](https://developers.google.com/pay/api/android/overview),[Google Pay Android integration checklist](https://developers.google.com/pay/api/android/guides/test-and-deploy/integration-checklist) and [Google Pay Android brand guidelines](https://developers.google.com/pay/api/android/guides/brand-guidelines)). The sample app can be found in [Google Pay Android API documentation - sample app](https://developers.google.com/pay/api/processors/guides/test-and-validation/create-test-app).
 
 Parameters:
 - ProcessorName=Valitor
@@ -241,6 +241,13 @@ URL: https://uat.valitorpay.com/Payment/CardPayment
      "correlationID": "9718bdfe-3556-4ca9-bf04-73df81802f43"
 }
 ```
+## Supported card types with currencies and countries
+| Card Type  | Settlement currencies | Country | 
+| ------------- | ------------- | ------------- |
+| VISA  | AUD, CAD, CHF, DKK, EUR, GBP, HKD, ISK, JPY, NOK, PLN, SEK, USD  | ALL  |
+| Master Card  | AUD, CAD, CHF, DKK, EUR, GBP, HKD, ISK, JPY, NOK, PLN, SEK, USD  | ALL  |
+| American Express  | ISK, EUR, USD  | ALL |
+| American Express  | BBR  | Great Britain |
 ## Trademark Information
 Android™ and Google Pay™ are trademarks of Google LLC.
 
