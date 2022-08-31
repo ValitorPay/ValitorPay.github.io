@@ -79,23 +79,17 @@ URL: https://uat.valitorpay.com/Payment/CardPayment
 
 **Request example:**
 ```
-{"operation": "Sale",
-"amount":1000,
-"currency":"ISK",
-"transactionType": "WalletTransaction",
-"Wallet": {
-      "WalletType": "GooglePay",
-      "GooglePay":{"signature":"MEUCIAZtot222t/FRosR8oO2H3c1xe/ypOIAQVeCeRfUZnTsAiEAqwsWtfo+IZXGhg2fTEUfxeA4IYEHyUM6hZ6NuJNEExE\u003d","intermediateSigningKey":{"signedKey":"
-      {\"keyValue\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEsgSQwhfkzjKyV8QLMEv1TRAwlHxsK47DIyk1RwkNRJQ3yNEpwrqtlJQ1ycPXFtCZm0p6pL5n3L20qRCfoF28FA\\u003d\\u003d\",\"key
-Expiration\":\"1658465055538\"}","signatures":["MEYCIQDpWGrNCagKyZcK+yPtcX5iaL2IP2f6BvxhLGIiCOZToQIhANvHUV8Ar3KoiTfh2
-+MIIGXzOoIYy58hHhsnF7MWnRt/"]},"protocolVersion":"ECv2","signedMessage":"{\"encryptedMessage\":\"LzYzlhR6zFZn/3H8ZdX0G
-zJ4MsJtKy9HnC9aahmBGGbBLesE4DMxKnLJlPn/FqDeylECDkqI6DOIGu3RFltXcUgFWJRRgPTFuxsZ5rBncu/XZIN4SkHLm2nN1ovxEI/j+c0
-y6g7uIQp6/uPd+lcp6vKZrsTnWhwYi7NWZx/t+GtYvqqDZWu6GqdqyXMw3mPEl+CnhoWmaHSC4O6hfPEBBgKrwFmWiYblVrcmBIhai30
-ds9lHPa5pgmnzQj6CMxFw4hqnYoefk4DfdQZnXmeM76I4ELju3y3171pcJBDM4hXygTJCzVWDSugOCAMye2cLiB6IsnffUwfC1cU9bz85tL
-FidkrxThrldUej28Z0AhNAljPu4XG6clJpx79FZB6yl0QYnVjgArMpTPeyzvuW5PsRbNmGW14e5hVhZenfaT0yPO1uvTnJQMjlGGy2/pLHoPX
-8SChGWi5dw+0em3zcQYmMvueXoGv4Gu/iyXYraorfJy1em7LBdJ72WkOPt2NA0usIF2ME9srGbwtVGZocDBf5DEYgdxqPflCuDt9gPIkE1h
-5HfFmtdEbk839t7vIKX+jB5Q\\u003d\\u003d\",\"ephemeralPublicKey\":\"BE2dRwe6LM72mZ8CBRmMxZEdwa/jr0tBR99TvEWnyf7Q
-piv9k0wcblSPuxj2FR4/la5Sq+NRzejs2eNGKwzsg8c\\u003d\",\"tag\":\"neMQnLn8eHaHoiKP8oe2Q8ZQTnBMVTwV95Fg7cyaHUg\\u003d\"}"}}}
+{
+	"operation": "Sale",
+	"amount":1000,
+	"currency":"ISK",
+	"transactionType": "WalletTransaction",
+	"Wallet": {
+		"UseNotVerifiedKeyForGooglePay": false,
+		"WalletType": "GooglePay",
+		"GooglePay":{"signature":"MEUCIAZtot222t/FRosR8oO2H3c1xe/ypOIAQVeCeRfUZnTsAiEAqwsWtfo+IZXGhg2fTEUfxeA4IYEHyUM6hZ6NuJNEExE\u003d","intermediateSigningKey":{"signedKey":"{\"keyValue\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEsgSQwhfkzjKyV8QLMEv1TRAwlHxsK47DIyk1RwkNRJQ3yNEpwrqtlJQ1ycPXFtCZm0p6pL5n3L20qRCfoF28FA\\u003d\\u003d\",\"keyExpiration\":\"1658465055538\"}","signatures":["MEYCIQDpWGrNCagKyZcK+yPtcX5iaL2IP2f6BvxhLGIiCOZToQIhANvHUV8Ar3KoiTfh2+MIIGXzOoIYy58hHhsnF7MWnRt/"]},"protocolVersion":"ECv2","signedMessage":"{\"encryptedMessage\":\"LzYzlhR6zFZn/3H8ZdX0GzJ4MsJtKy9HnC9aahmBGGbBLesE4DMxKnLJlPn/FqDeylECDkqI6DOIGu3RFltXcUgFWJRRgPTFuxsZ5rBncu/XZIN4SkHLm2nN1ovxEI/j+c0y6g7uIQp6/uPd+lcp6vKZrsTnWhwYi7NWZx/t+GtYvqqDZWu6GqdqyXMw3mPEl+CnhoWmaHSC4O6hfPEBBgKrwFmWiYblVrcmBIhai30ds9lHPa5pgmnzQj6CMxFw4hqnYoefk4DfdQZnXmeM76I4ELju3y3171pcJBDM4hXygTJCzVWDSugOCAMye2cLiB6IsnffUwfC1cU9bz85tLFidkrxThrldUej28Z0AhNAljPu4XG6clJpx79FZB6yl0QYnVjgArMpTPeyzvuW5PsRbNmGW14e5hVhZenfaT0yPO1uvTnJQMjlGGy2/pLHoPX8SChGWi5dw+0em3zcQYmMvueXoGv4Gu/iyXYraorfJy1em7LBdJ72WkOPt2NA0usIF2ME9srGbwtVGZocDBf5DEYgdxqPflCuDt9gPIkE1h5HfFmtdEbk839t7vIKX+jB5Q\\u003d\\u003d\",\"ephemeralPublicKey\":\"BE2dRwe6LM72mZ8CBRmMxZEdwa/jr0tBR99TvEWnyf7Qpiv9k0wcblSPuxj2FR4/la5Sq+NRzejs2eNGKwzsg8c\\u003d\",\"tag\":\"neMQnLn8eHaHoiKP8oe2Q8ZQTnBMVTwV95Fg7cyaHUg\\u003d\"}"}
+	}
+}
 ```
 ```
 {
