@@ -239,7 +239,9 @@ URL: https://uat.valitorpay.com/Payment/CardPayment
 | ------------- | ------------- | ------------- |
 | VISA  | AUD, CAD, CHF, DKK, EUR, GBP, HKD, ISK, JPY, NOK, PLN, SEK, USD  | Europe (EEA and non EEA countries)  |
 | Master Card  | AUD, CAD, CHF, DKK, EUR, GBP, HKD, ISK, JPY, NOK, PLN, SEK, USD  | Europe (EEA and non EEA countries)   |
-| American Express  | ISK, GBP, EUR  | Iceland, United Kingdom, Republic of Ireland |
+| American Express  | ISK | Iceland |
+| American Express  | GBP | United Kingdom |
+| American Express  | EUR | Republic of Ireland |
 ## Trademark Information
 Android™ and Google Pay™ are trademarks of Google LLC.
 
