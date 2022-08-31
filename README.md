@@ -15,6 +15,7 @@ Google Pay™ Integration is consisted of two flows:
 
 Contains additional steps for verifications. Additional calls should be performed (3DS and payment) in comparison with Tokenized flow
 
+
 ## Android™ application integration
 ### GooglePay Api
 
@@ -35,7 +36,7 @@ URL: https://uat.valitorpay.com/Payment/CardPayment
       "transactionType": "WalletTransaction",
       "Wallet": {
             "WalletType": "GooglePay",
-      "GooglePay":{"signature":"MEUCIQDpFOEU3zscFVFym4QLpcXbzd8qqKwfAA38vp89HnvwjAIgIzSubChNVbJIN6yQYTQnOy7qwmAF2a59OPeiC8q4Tyw\u003d","intermediateSigningKey":{"signedKey":"{\"keyValue\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEwVtSWMaS7R/1jL/8GqaZaP00lFLXCRKDTw9fZhxkDP4qEY/wqgid71ya246kAegJN41FgSsUpmkt8KbxB8ahJg\\u003d\\u003d\",\"keyExpiration\":\"1657834014469\"}","signatures":["MEQCIBPvajoD4UM183SRCRS7i0Jcb8IzdRHidO4fTJfKeRB8AiA6RzV6FmAKUICE09HCH0DvJcXqcoGbPqrNX7uAhpMQSQ\u003d\u003d"]},"protocolVersion":"ECv2","signedMessage":"{\"encryptedMessage\":\"uWPsIRWD4+5pW788GuaA6bRhuZV7Wm1xVEv0jazG+Qg5WPfehDVE1tsfGSVG0uqqhBz3MPIOhvST4Fh528oZDY5NhgFwVmDrtWQwPc+qfHEL1EbyvvRKcbt9gt8N/EEHeRmoDA1FhJ8SnkhQ5FEjSLuqb+IbRT70OI7ERJcddwkb2/Gc19KvNa7kOcTJIfIFzn6GJamqjFH42w31RDIz1q+aiI8kxV+9vuUYKxcbxtIGDw26n5owMlJq5RvK7AUhHY/XLo32/ybpC8EPfwEigii0gIYEkjigFP3pHaGiegbO8E6QxSKrpxDdNIj25bOnGg/a8TLxKgXBdt9GAUv/SBvXeiZTHXv62l/Zfby6TrqsF7/I6OHTlfth1XtcHqps+tXAIyyD17HGa7ZZB4K8jbfpMJ4FjpNDFMtGrv+QyMwygh4Ahds/iflzQewInBFQvp6ZKVxIqc/qqGP7sqqa/9jQVy6e7UI8avpBVsh5SLiHNlvYm44dBl9rCZNJGT+w1/yYXZp5DR0Tj5HALoCF8vDBs0WwDOhxbzpw7UDDoqWS0VujLlZViXX72GhiPrZexHGpZa2BvaItZS/EWY4IQjp7TxEDBxzuHOtMPNX3I/w+aVPxn78sx+XZYS7XRxFNoK8lgTfUUQ\\u003d\\u003d\",\"ephemeralPublicKey\":\"BMuCf3WzUk5TTgYqomAP5Nh4JvvC1gIIEWBQs2pN1euA/D4V7NZcftq89ljq3zJRqfco8ZgFKOdJtbdxEtJyvqg\\u003d\",\"tag\":\"2cWdaBaIKQMyui5gXAG8Os+sUEJ79lazSnngPGl+J9c\\u003d\"}"}
+             "GooglePay":{"signature":"MEUCIQDpFOEU3zscFVFym4QLpcXbzd8qqKwfAA38vp89HnvwjAIgIzSubChNVbJIN6yQYTQnOy7qwmAF2a59OPeiC8q4Tyw\u003d","intermediateSigningKey":{"signedKey":"{\"keyValue\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEwVtSWMaS7R/1jL/8GqaZaP00lFLXCRKDTw9fZhxkDP4qEY/wqgid71ya246kAegJN41FgSsUpmkt8KbxB8ahJg\\u003d\\u003d\",\"keyExpiration\":\"1657834014469\"}","signatures":["MEQCIBPvajoD4UM183SRCRS7i0Jcb8IzdRHidO4fTJfKeRB8AiA6RzV6FmAKUICE09HCH0DvJcXqcoGbPqrNX7uAhpMQSQ\u003d\u003d"]},"protocolVersion":"ECv2","signedMessage":"{\"encryptedMessage\":\"uWPsIRWD4+5pW788GuaA6bRhuZV7Wm1xVEv0jazG+Qg5WPfehDVE1tsfGSVG0uqqhBz3MPIOhvST4Fh528oZDY5NhgFwVmDrtWQwPc+qfHEL1EbyvvRKcbt9gt8N/EEHeRmoDA1FhJ8SnkhQ5FEjSLuqb+IbRT70OI7ERJcddwkb2/Gc19KvNa7kOcTJIfIFzn6GJamqjFH42w31RDIz1q+aiI8kxV+9vuUYKxcbxtIGDw26n5owMlJq5RvK7AUhHY/XLo32/ybpC8EPfwEigii0gIYEkjigFP3pHaGiegbO8E6QxSKrpxDdNIj25bOnGg/a8TLxKgXBdt9GAUv/SBvXeiZTHXv62l/Zfby6TrqsF7/I6OHTlfth1XtcHqps+tXAIyyD17HGa7ZZB4K8jbfpMJ4FjpNDFMtGrv+QyMwygh4Ahds/iflzQewInBFQvp6ZKVxIqc/qqGP7sqqa/9jQVy6e7UI8avpBVsh5SLiHNlvYm44dBl9rCZNJGT+w1/yYXZp5DR0Tj5HALoCF8vDBs0WwDOhxbzpw7UDDoqWS0VujLlZViXX72GhiPrZexHGpZa2BvaItZS/EWY4IQjp7TxEDBxzuHOtMPNX3I/w+aVPxn78sx+XZYS7XRxFNoK8lgTfUUQ\\u003d\\u003d\",\"ephemeralPublicKey\":\"BMuCf3WzUk5TTgYqomAP5Nh4JvvC1gIIEWBQs2pN1euA/D4V7NZcftq89ljq3zJRqfco8ZgFKOdJtbdxEtJyvqg\\u003d\",\"tag\":\"2cWdaBaIKQMyui5gXAG8Os+sUEJ79lazSnngPGl+J9c\\u003d\"}"}
       }
 }
 ```
@@ -82,9 +83,9 @@ URL: https://uat.valitorpay.com/Payment/CardPayment
 "amount":1000,
 "currency":"ISK",
 "transactionType": "WalletTransaction",
-"Wallet": {"WalletType": "GooglePay",
-
-"GooglePay":{"signature":"MEUCIAZtot222t/FRosR8oO2H3c1xe/ypOIAQVeCeRfUZnTsAiEAqwsWtfo+IZXGhg2fTEUfxeA4IY
+"Wallet": {
+      "WalletType": "GooglePay",
+      "GooglePay":{"signature":"MEUCIAZtot222t/FRosR8oO2H3c1xe/ypOIAQVeCeRfUZnTsAiEAqwsWtfo+IZXGhg2fTEUfxeA4IY
 EHyUM6hZ6NuJNEExE\u003d","intermediateSigningKey":{"signedKey":"{\"keyValue\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgA
 EsgSQwhfkzjKyV8QLMEv1TRAwlHxsK47DIyk1RwkNRJQ3yNEpwrqtlJQ1ycPXFtCZm0p6pL5n3L20qRCfoF28FA\\u003d\\u003d\",\"key
 Expiration\":\"1658465055538\"}","signatures":["MEYCIQDpWGrNCagKyZcK+yPtcX5iaL2IP2f6BvxhLGIiCOZToQIhANvHUV8Ar3KoiTfh2
