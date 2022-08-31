@@ -3,6 +3,11 @@
 ## Overview
 Google Pay™ Integration is consisted of two flows:
 
+### Tokenized
+(Android™, Wallet transaction):
+
+![Showing tokenized flow](docs/assets/Tokenized.JPG)
+
 ### Untokenized 
 (Web Applications, Regular payment):
 
@@ -10,10 +15,52 @@ Google Pay™ Integration is consisted of two flows:
 
 Contains additional steps for verifications. Additional calls should be performed (3DS and payment) in comparison with Tokenized flow
 
-### Tokenized
-(Android™, Wallet transaction):
+## Android™ application integration
+### GooglePay Api
 
-![Showing untokenized flow](docs/assets/Tokenized.JPG)
+To integrate Google Pay™ acceptance into your application, follow instructions ([Google Pay Android developer documentation](https://developers.google.com/pay/api/android/overview),[Google Pay Android integration checklist](https://developers.google.com/pay/api/android/guides/test-and-deploy/integration-checklist) and [Google Pay Android brand guidelines](https://developers.google.com/pay/api/android/guides/brand-guidelines)). The sample app can be found in [Google Pay Android API documentation - sample app](https://developers.google.com/pay/api/processors/guides/test-and-validation/create-test-app).
+
+Parameters:
+- ProcessorName=valitor
+- GatewayMerchantId=MerchantAgreementNumber
+
+### Payment API:
+URL: https://uat.valitorpay.com/Payment/CardPayment
+
+**Request example:**
+```
+{     "operation": "Sale",
+      "amount":11300,
+      "currency":"ISK",
+      "transactionType": "WalletTransaction",
+      "Wallet": {
+            "WalletType": "GooglePay",
+      "GooglePay":{"signature":"MEUCIQDpFOEU3zscFVFym4QLpcXbzd8qqKwfAA38vp89HnvwjAIgIzSubChNVbJIN6yQYTQnOy7qwmAF2a59OPeiC8q4Tyw\u003d","intermediateSigningKey":{"signedKey":"{\"keyValue\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEwVtSWMaS7R/1jL/8GqaZaP00lFLXCRKDTw9fZhxkDP4qEY/wqgid71ya246kAegJN41FgSsUpmkt8KbxB8ahJg\\u003d\\u003d\",\"keyExpiration\":\"1657834014469\"}","signatures":["MEQCIBPvajoD4UM183SRCRS7i0Jcb8IzdRHidO4fTJfKeRB8AiA6RzV6FmAKUICE09HCH0DvJcXqcoGbPqrNX7uAhpMQSQ\u003d\u003d"]},"protocolVersion":"ECv2","signedMessage":"{\"encryptedMessage\":\"uWPsIRWD4+5pW788GuaA6bRhuZV7Wm1xVEv0jazG+Qg5WPfehDVE1tsfGSVG0uqqhBz3MPIOhvST4Fh528oZDY5NhgFwVmDrtWQwPc+qfHEL1EbyvvRKcbt9gt8N/EEHeRmoDA1FhJ8SnkhQ5FEjSLuqb+IbRT70OI7ERJcddwkb2/Gc19KvNa7kOcTJIfIFzn6GJamqjFH42w31RDIz1q+aiI8kxV+9vuUYKxcbxtIGDw26n5owMlJq5RvK7AUhHY/XLo32/ybpC8EPfwEigii0gIYEkjigFP3pHaGiegbO8E6QxSKrpxDdNIj25bOnGg/a8TLxKgXBdt9GAUv/SBvXeiZTHXv62l/Zfby6TrqsF7/I6OHTlfth1XtcHqps+tXAIyyD17HGa7ZZB4K8jbfpMJ4FjpNDFMtGrv+QyMwygh4Ahds/iflzQewInBFQvp6ZKVxIqc/qqGP7sqqa/9jQVy6e7UI8avpBVsh5SLiHNlvYm44dBl9rCZNJGT+w1/yYXZp5DR0Tj5HALoCF8vDBs0WwDOhxbzpw7UDDoqWS0VujLlZViXX72GhiPrZexHGpZa2BvaItZS/EWY4IQjp7TxEDBxzuHOtMPNX3I/w+aVPxn78sx+XZYS7XRxFNoK8lgTfUUQ\\u003d\\u003d\",\"ephemeralPublicKey\":\"BMuCf3WzUk5TTgYqomAP5Nh4JvvC1gIIEWBQs2pN1euA/D4V7NZcftq89ljq3zJRqfco8ZgFKOdJtbdxEtJyvqg\\u003d\",\"tag\":\"2cWdaBaIKQMyui5gXAG8Os+sUEJ79lazSnngPGl+J9c\\u003d\"}"}
+      }
+}
+```
+**Response example:**
+```
+{
+    "acquirerReferenceNumber": "971975",
+    "transactionID": "219509971975",
+    "authorizationCode": "147752",
+    "transactionLifecycleId": "ABC4629140714",
+    "maskedCardNumber": "520424******7840",
+    "isSuccess": true,
+    "cardInformation": {
+            "cardScheme": "M",
+            "issuingCountry": null,
+            "cardUsage": null,
+            "cardCategory": null,
+            "outOfScaScope": false
+     },
+     "responseCode": "00-I",
+     "responseDescription": "Authorized."
+     ,"responseTime": "00:00:00",
+     "correlationID": "9718bdfe-3556-4ca9-bf04-73df81802f43"
+}
+```
 
 ## Web application integration
 ### Google Pay Api
@@ -21,7 +68,7 @@ Contains additional steps for verifications. Additional calls should be performe
 To integrate Google Pay™ acceptance into your application, follow instructions ([Google Pay Web developer documentation](https://developers.google.com/pay/api/web/overview),[Google Pay Web integration checklist](https://developers.google.com/pay/api/web/guides/test-and-deploy/integration-checklist) and [Google Pay Web Brand Guidelines](https://developers.google.com/pay/api/web/guides/brand-guidelines)).
 
 Integration is started by loading Java Script library ([Google Pay Web API documentation Demos](https://developers.google.com/pay/api/web/guides/resources/demos)) and defining parameters:
-- gateway: Valitor
+- gateway: valitor
 - environment: Test or Production
 - allowedCardAuthMethods: For Web can be PAN_ONLY even in documentation is defined also CRYPTOGRAM_3DS
 
@@ -35,7 +82,7 @@ URL: https://uat.valitorpay.com/Payment/CardPayment
 "amount":1000,
 "currency":"ISK",
 "transactionType": "WalletTransaction",
-"Wallet": {"UseNotVerifiedKeyForGooglePay": false,"WalletType": "GooglePay",
+"Wallet": {"WalletType": "GooglePay",
 
 "GooglePay":{"signature":"MEUCIAZtot222t/FRosR8oO2H3c1xe/ypOIAQVeCeRfUZnTsAiEAqwsWtfo+IZXGhg2fTEUfxeA4IY
 EHyUM6hZ6NuJNEExE\u003d","intermediateSigningKey":{"signedKey":"{\"keyValue\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgA
@@ -193,61 +240,13 @@ URL: https://uat.valitorpay.com/Payment/CardPayment
    "correlationID": "45a5bb98-1f3e-4d38-93c9-def4d20f5c8a"
 }   
 ```
-## Android™ application integration
-### GooglePay Api
 
-To integrate Google Pay™ acceptance into your application, follow instructions ([Google Pay Android developer documentation](https://developers.google.com/pay/api/android/overview),[Google Pay Android integration checklist](https://developers.google.com/pay/api/android/guides/test-and-deploy/integration-checklist) and [Google Pay Android brand guidelines](https://developers.google.com/pay/api/android/guides/brand-guidelines)). The sample app can be found in [Google Pay Android API documentation - sample app](https://developers.google.com/pay/api/processors/guides/test-and-validation/create-test-app).
-
-Parameters:
-- ProcessorName=Valitor
-- GatewayMerchantId=MerchantAgreementNumber
-
-
-### Payment API:
-URL: https://uat.valitorpay.com/Payment/CardPayment
-
-**Request example:**
-```
-{     "operation": "Sale",
-      "amount":11300,
-      "currency":"ISK",
-      "transactionType": "WalletTransaction",
-      "Wallet": {
-            "UseNotVerifiedKeyForGooglePay": false,
-            "WalletType": "GooglePay",
-      "GooglePay":{"signature":"MEUCIQDpFOEU3zscFVFym4QLpcXbzd8qqKwfAA38vp89HnvwjAIgIzSubChNVbJIN6yQYTQnOy7qwmAF2a59OPeiC8q4Tyw\u003d","intermediateSigningKey":{"signedKey":"{\"keyValue\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEwVtSWMaS7R/1jL/8GqaZaP00lFLXCRKDTw9fZhxkDP4qEY/wqgid71ya246kAegJN41FgSsUpmkt8KbxB8ahJg\\u003d\\u003d\",\"keyExpiration\":\"1657834014469\"}","signatures":["MEQCIBPvajoD4UM183SRCRS7i0Jcb8IzdRHidO4fTJfKeRB8AiA6RzV6FmAKUICE09HCH0DvJcXqcoGbPqrNX7uAhpMQSQ\u003d\u003d"]},"protocolVersion":"ECv2","signedMessage":"{\"encryptedMessage\":\"uWPsIRWD4+5pW788GuaA6bRhuZV7Wm1xVEv0jazG+Qg5WPfehDVE1tsfGSVG0uqqhBz3MPIOhvST4Fh528oZDY5NhgFwVmDrtWQwPc+qfHEL1EbyvvRKcbt9gt8N/EEHeRmoDA1FhJ8SnkhQ5FEjSLuqb+IbRT70OI7ERJcddwkb2/Gc19KvNa7kOcTJIfIFzn6GJamqjFH42w31RDIz1q+aiI8kxV+9vuUYKxcbxtIGDw26n5owMlJq5RvK7AUhHY/XLo32/ybpC8EPfwEigii0gIYEkjigFP3pHaGiegbO8E6QxSKrpxDdNIj25bOnGg/a8TLxKgXBdt9GAUv/SBvXeiZTHXv62l/Zfby6TrqsF7/I6OHTlfth1XtcHqps+tXAIyyD17HGa7ZZB4K8jbfpMJ4FjpNDFMtGrv+QyMwygh4Ahds/iflzQewInBFQvp6ZKVxIqc/qqGP7sqqa/9jQVy6e7UI8avpBVsh5SLiHNlvYm44dBl9rCZNJGT+w1/yYXZp5DR0Tj5HALoCF8vDBs0WwDOhxbzpw7UDDoqWS0VujLlZViXX72GhiPrZexHGpZa2BvaItZS/EWY4IQjp7TxEDBxzuHOtMPNX3I/w+aVPxn78sx+XZYS7XRxFNoK8lgTfUUQ\\u003d\\u003d\",\"ephemeralPublicKey\":\"BMuCf3WzUk5TTgYqomAP5Nh4JvvC1gIIEWBQs2pN1euA/D4V7NZcftq89ljq3zJRqfco8ZgFKOdJtbdxEtJyvqg\\u003d\",\"tag\":\"2cWdaBaIKQMyui5gXAG8Os+sUEJ79lazSnngPGl+J9c\\u003d\"}"}
-      }
-}
-```
-**Response example:**
-```
-{
-    "acquirerReferenceNumber": "971975",
-    "transactionID": "219509971975",
-    "authorizationCode": "147752",
-    "transactionLifecycleId": "ABC4629140714",
-    "maskedCardNumber": "520424******7840",
-    "isSuccess": true,
-    "cardInformation": {
-            "cardScheme": "M",
-            "issuingCountry": null,
-            "cardUsage": null,
-            "cardCategory": null,
-            "outOfScaScope": false
-     },
-     "responseCode": "00-I",
-     "responseDescription": "Authorized."
-     ,"responseTime": "00:00:00",
-     "correlationID": "9718bdfe-3556-4ca9-bf04-73df81802f43"
-}
-```
 ## Supported card types with currencies and countries
-| Card Type  | Settlement currencies | Country | 
+| Card Type  | Settlement currencies | Settlement countries | 
 | ------------- | ------------- | ------------- |
-| VISA  | AUD, CAD, CHF, DKK, EUR, GBP, HKD, ISK, JPY, NOK, PLN, SEK, USD  | ALL  |
-| Master Card  | AUD, CAD, CHF, DKK, EUR, GBP, HKD, ISK, JPY, NOK, PLN, SEK, USD  | ALL  |
-| American Express  | ISK, EUR, USD  | ALL |
-| American Express  | GBR  | Great Britain |
+| VISA  | AUD, CAD, CHF, DKK, EUR, GBP, HKD, ISK, JPY, NOK, PLN, SEK, USD  | Europe (EEA and non EEA countries)  |
+| Master Card  | AUD, CAD, CHF, DKK, EUR, GBP, HKD, ISK, JPY, NOK, PLN, SEK, USD  | Europe (EEA and non EEA countries)   |
+| American Express  | ISK, EUR, USD  | Iceland, UK Republic of Ireland |
 ## Trademark Information
 Android™ and Google Pay™ are trademarks of Google LLC.
 
