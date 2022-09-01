@@ -2,3 +2,4 @@ theme: jekyll-theme-minimal
 title: ValitorPay
 github:
   is_project_page: false
+markdown: GFM
