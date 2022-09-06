@@ -92,14 +92,16 @@ URL: https://uat.valitorpay.com/Payment/CardPayment
 ```
 ```
 {
-  "pan": "5555555555554444",
-  "expirationMonth": "12",
-  "expirationYear": "2027",
-  "isSuccess": false,
-  "responseCode": "Q8",
-  "responseDescription": "GooglePay Token is not tokenized.",
-  "responseTime": "00:00:00",
-  "correlationID": "78c7e355-8e12-499b-9a6e-ce41e96fa7a9"
+    "googlePayCardInformation": {
+        "pan": "5555555555554444",
+        "expirationMonth": 12,
+        "expirationYear": 2027
+    },
+    "isSuccess": true,
+    "responseCode": "Q8",
+    "responseDescription": "Decryption of GooglePay Token was successful. Please proceed with Card verification followed by Card payment.",
+    "responseTime": "00:00:00",
+    "correlationID": "4e556a11-c80d-4353-89a8-310dce5975b1"
 }
 ```
 ### 3D Secure verficiation API:
